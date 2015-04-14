@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :follow]
 
   # GET /users
   # GET /users.json
@@ -65,6 +65,20 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def follow
+    @event = Event.new(user_id: current_user.id, user_target_id: @user.id)
+
+    respond_to do |format|
+      if @event.save
+        format.html { redirect_to @user, notice: 'User was successfully followed.' }
+        format.json { render :show, status: :created, location: @event }
+      else
+        format.html { render :show }
+        format.json { render json: @event.errors, status: :unprocessable_entity }
+      end
     end
   end
 

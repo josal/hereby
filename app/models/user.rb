@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   
   has_many :events
 
+  def followed_by?(user_id)
+    !Event.where(user_id: user_id, user_target_id: self.id).empty?
+  end
+  
 end
