@@ -1,6 +1,20 @@
 - if current_user
   %h1 Activity feed
+  - if @messages.blank?
+    There's no messages from users you're currently following
+  - else 
+    %table
+      %tr
+        %th User name
+        %th Message
+        %th Datetime
+      - @messages.each do |message|
+        %tr
+          %td= message.user.name
+          %td= message.body
+          %td= l(message.created_at)
   %br
+  %br  
   = link_to t("Publish new message"), new_message_path
   
 - else

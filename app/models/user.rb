@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   validates :name, presence: true, uniqueness: true
+  
+  has_many :messages
+  
+  has_many :events
+  
+  scope :followed_userids_by_user, ->(user){ user.events.map(&:user_target_id)}
 end

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  belongs_to: 
+  user_target_id: 1
+  kind: 1
+
+two:
+  belongs_to: 
+  user_target_id: 1
+  kind: 1
