@@ -9,6 +9,5 @@ class User < ActiveRecord::Base
   has_many :messages
   
   has_many :events
-  
-  scope :followed_userids_by_user, ->(user){ user.events.map(&:user_target_id)}
+
 end

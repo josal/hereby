@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20150414155439) do
     t.datetime "updated_at",                 null: false
   end
 
-  add_index "events", ["user_id", "user_target_id"], name: "index_events_on_user_id_and_user_target_id", unique: true
   add_index "events", ["user_id"], name: "index_events_on_user_id"
   add_index "events", ["user_target_id"], name: "index_events_on_user_target_id"
 

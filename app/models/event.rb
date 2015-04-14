@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   belongs_to :user
+  belongs_to :user_target, class: User
 
-  validates :user_target_id, presence: true
   validates :kind, presence: true
 end

@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+u1 = User.create(name: "Jose1", email: "josese1@gmail.com", password: "aaaaaaaa")
+u2 = User.create(name: "Jose2", email: "josese2@gmail.com", password: "aaaaaaaa")
+Event.create(user: u1, user_target: u2)
+Message.create(user: u2, body: "TEXTO")
