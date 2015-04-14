@@ -1,0 +1,25 @@
+Platform161 has decided changing our business model and we are going to create something new, a social network! We have not decided any brand yet, so you can be creative with the name and the logo.
+From the app we want to provide these features:
+
+- An user can register using his email, a selected password and an user name. The user name has to be unique.
+
+- One user can publish messages no longer than 160 characters.
+
+- One user can follow what other users publish. When the user accesses the application, he will see the messages published by the users he follow.
+
+- Everyone can see the users followed by any user.
+
+- Everyone can see the users that follow one user.
+
+But we also want to allow other developers to build their own applications using our public information. So, provide an API access to allow:
+
+- See one user messages.
+
+- See the users followed by one user.
+
+- See the users that follow one user.
+
+Show us your best code! We won't blame on you if your application looks ugly, but we will if your code is ugly!
+
+You can work on the assignment at your own pace for a few days. Let me know if you think that you won't have time for all, we can limit the scope. As said at the beginning of this mail, If you have any questions also feel free to reach out.
+
