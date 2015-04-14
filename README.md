@@ -1,3 +1,3 @@
-!(resources/logo.png)
+![Hereby logo](resources/logo.png)
 
 Hereby social network
