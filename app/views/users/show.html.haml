@@ -2,15 +2,15 @@
 
 %p
   He's published
-  =link_to("#{@user.messages_count} #{Message.model_name.human(count: @user.messages_count)}", messages_path(user_id: @user.id))
+  =link_to("#{@user.messages_count} #{Message.model_name.human(count: @user.messages_count)}", messages_user_path)
 
 %p
   He's following
-  =link_to("#{@user.following_count} #{User.model_name.human(count: @user.following_count)}", users_path(user_id: @user.id))
+  =link_to("#{@user.following_count} #{User.model_name.human(count: @user.following_count)}", following_user_path)
 
 %p
   He's followed by
-  =link_to("#{@user.followed_count} #{User.model_name.human(count: @user.followed_count)}", users_path(user_target_id: @user.id))
+  =link_to("#{@user.followed_count} #{User.model_name.human(count: @user.followed_count)}", followed_user_path)
 
 - if !@user.followed_by?(current_user.id)
   - if @user != current_user

@@ -5,13 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = if params[:user_id]
-      Event.where(user_id: params[:user_id]).select(:user_target_id).distinct.map(&:user_target)
-    elsif params[:user_target_id]
-      Event.where(user_target_id: params[:user_target_id]).select(:user_id).distinct.map(&:user)
-    else
-      User.all
-    end
+    @users = User.all
   end
 
   # GET /users/1
@@ -80,6 +74,21 @@ class UsersController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def following
+    @users = Event.where(user_id: params[:id]).select(:user_target_id).distinct.map(&:user_target)
+    render :index
+  end
+
+  def followed
+    @users = Event.where(user_target_id: params[:id]).select(:user_id).distinct.map(&:user)
+    render :index
+  end
+
+  def messages
+    @messages = Message.where(user_id: params[:id])
+    render template: 'messages/index'
   end
 
   private
