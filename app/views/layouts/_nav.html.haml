@@ -1,0 +1,8 @@
+- if current_user
+  %p
+    Hello,
+    = current_user.name
+    %br
+    = render "devise/shared/logged_links"
+- else
+  = render "devise/shared/links"
