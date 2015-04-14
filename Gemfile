@@ -5,9 +5,11 @@ ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
-gem 'ransack', '~> 1.6.6'    # Búsquedas y filtros dinámicos
+gem 'ransack',     '~> 1.6.6'   # Búsquedas y filtros dinámicos
 
-gem 'devise', '~> 3.4.1'    # Autenticación, gestión de usuarios
+gem 'devise',      '~> 3.4.1'    # Autenticación, gestión de usuarios
+
+gem 'simple_form', '~> 3.1.0'    # Hacer formularios avanzados
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.3'
@@ -16,7 +18,7 @@ gem 'sass-rails', '~> 5.0.3'
 gem 'haml-rails', '~> 0.9.0'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 2.7.1'
+gem 'uglifier',   '~> 2.7.1'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'

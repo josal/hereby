@@ -1,1 +1,12 @@
-This is the home page
+- if current_user
+  %p
+    Hello,
+    = current_user.name
+    
+  = link_to t("Edit account"), edit_user_registration_path
+  = link_to t("Logout"), destroy_user_session_path, method: :delete
+  
+- else
+
+  %p This is the public homepage
+  = render "devise/shared/links"
