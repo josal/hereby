@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
@@ -64,7 +66,8 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'puma',                      '~> 2.11.2'  # Buen servidor para heroku
+  gem 'pg',                        '~> 0.18.1'
+  gem 'puma',                      '~> 2.11.2' # Buen servidor para heroku
   gem 'rails_serve_static_assets', '~> 0.0.4'  # Servir la documentación en heroku desde /public
   # http://stackoverflow.com/questions/19900093/rails-logger-appears-to-be-duplicating-log-lines
   gem 'rails_12factor',            '~> 0.0.3'  # Cosas de heroku - https://devcenter.heroku.com/articles/ruby-support#injected-plugins
