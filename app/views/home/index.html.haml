@@ -5,7 +5,12 @@
     
   = link_to t("Edit account"), edit_user_registration_path
   = link_to t("Logout"), destroy_user_session_path, method: :delete
+
+  %h2 Activity feed
   
+
+  %br
+  = link_to t("Publish new message"), new_message_path
 - else
 
   %p This is the public homepage

@@ -1,0 +1,8 @@
+= simple_form_for(@message) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :body, required: true, autofocus: true, hint: "160 characters maximum"
+
+  .form-actions
+    = f.button :submit, value: "Publish message"
