@@ -1,4 +1,18 @@
+%h1 Message detail
 
-= link_to 'Edit', edit_message_path(@message)
-\|
-= link_to 'Back', messages_path
+%table
+  %thead
+    %tr
+      %th User name
+      %th Message body
+      %th  Created
+  %tbody
+    %tr
+      %td= @message.user.name
+      %td= @message.body
+      %td= l(@message.created_at)
+
+%br
+%br
+
+= link_to 'Home', root_url

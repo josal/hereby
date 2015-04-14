@@ -1,0 +1,9 @@
+%h1= "#{@user.name}'s profile"
+
+%p= "He's published #{link_to("#{@user.messages_count} #{Message.model_name.human(count: @user.messages_count)}", messages_path(user_id: @user.id))}".html_safe
+
+%p= "He's following #{link_to("#{@user.following_count} #{User.model_name.human(count: @user.following_count)}", users_path(user_id: @user.id))}".html_safe
+
+%p= "He's followed by #{link_to("#{@user.followed_count} #{User.model_name.human(count: @user.followed_count)}", users_path(user_target_id: @user.id))}".html_safe
+
+= link_to 'Home', root_path

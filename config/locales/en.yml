@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models:
+      message:
+        one: 'message'
+        other: 'messages'
+      user:
+        one: 'user'
+        other: 'users'

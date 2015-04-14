@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414155439) do
+ActiveRecord::Schema.define(version: 20150414183511) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150414155439) do
     t.datetime "updated_at",                 null: false
   end
 
+  add_index "events", ["user_id", "user_target_id"], name: "index_events_on_user_id_and_user_target_id", unique: true
   add_index "events", ["user_id"], name: "index_events_on_user_id"
   add_index "events", ["user_target_id"], name: "index_events_on_user_target_id"
 
@@ -47,6 +48,9 @@ ActiveRecord::Schema.define(version: 20150414155439) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.integer  "messages_count",         default: 0,  null: false
+    t.integer  "following_count",        default: 0,  null: false
+    t.integer  "followed_count",         default: 0,  null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

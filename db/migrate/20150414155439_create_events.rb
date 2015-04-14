@@ -7,5 +7,7 @@ class CreateEvents < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_index :events, [:user_id, :user_target_id], unique: true
   end
 end
