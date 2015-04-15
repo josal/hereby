@@ -5,6 +5,10 @@ ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
+gem 'grape', '~> 0.11.0'        # APIs DSL
+gem "hashie-forbidden_attributes", "~> 0.1.1" # Related to avoid strong parameters and grape
+gem "grape-entity", "~> 0.4.5"  # Manage grape responses format
+
 gem 'ransack',     '~> 1.6.6'   # Búsquedas y filtros dinámicos
 
 gem 'devise',      '~> 3.4.1'    # Autenticación, gestión de usuarios
