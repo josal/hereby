@@ -77,12 +77,12 @@ class UsersController < ApplicationController
   end
 
   def following
-    @users = Event.where(user_id: params[:id]).select(:user_target_id).distinct.map(&:user_target)
+    @users = Event.user_following(params[:id])
     render :index
   end
 
-  def followed
-    @users = Event.where(user_target_id: params[:id]).select(:user_id).distinct.map(&:user)
+  def followers
+    @users = Event.user_followers(params[:id])
     render :index
   end
 

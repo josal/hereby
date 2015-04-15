@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150414183511) do
     t.string   "name"
     t.integer  "messages_count",         default: 0,  null: false
     t.integer  "following_count",        default: 0,  null: false
-    t.integer  "followed_count",         default: 0,  null: false
+    t.integer  "followers_count",        default: 0,  null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

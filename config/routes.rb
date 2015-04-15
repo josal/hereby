@@ -4,7 +4,7 @@ Hereby::Application.routes.draw do
   resources :users do
     get :follow,    on: :member
     get :following, on: :member
-    get :followed,  on: :member
+    get :followers, on: :member
     get :messages,  on: :member
   end
 
