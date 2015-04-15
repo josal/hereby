@@ -10,6 +10,6 @@ module Entities
       expose :created_at
     end
     # In the future there will be a message index with different users
-    # expose :user, using: Entities::UserDetail
+    # expose :user, using: Entities::User
   end
 end

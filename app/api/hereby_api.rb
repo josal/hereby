@@ -10,6 +10,7 @@ class HerebyAPI < Grape::API
     route_param :id do
       desc "See one user messages"
       get :messages do
+        # We specify [] for the cases when the user does not exist and to not answer nil, making it homogeneous
         users = User.find_by(id: params[:id]).try(:messages) || []
         present users, with: Entities::Message
       end
