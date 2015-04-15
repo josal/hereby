@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20150414183511) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "name"
     t.integer  "messages_count",         default: 0,  null: false
     t.integer  "following_count",        default: 0,  null: false
